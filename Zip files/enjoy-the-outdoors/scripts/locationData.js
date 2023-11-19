@@ -55,3 +55,23 @@ const locationsArray = [
     "Wisconsin",
     "Wyoming"
 ]
+//document.addEventListener("DOMContentLoaded", () => {
+//    const locationFilter = document.getElementById("location-filter");
+//    locationFilter.addEventListener("change", filterLocation)
+//
+//    displayParks(Parks);
+//})
+//function createOption(parent){
+//    const option = document.createElement("option");
+//    parent.appendChild(option);
+//
+//    console.log(option);
+//}
+//createOption();
+//function populateOption(){
+//    const option = document.getElementById("location-filter")
+//
+//}
+//function displayParks(){
+//    
+//}

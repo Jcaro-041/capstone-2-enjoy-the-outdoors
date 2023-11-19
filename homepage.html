@@ -15,74 +15,77 @@
     <script src="Zip files/enjoy-the-outdoors/scripts/nationalParkData.js"></script>
     <script src="Zip files/enjoy-the-outdoors/scripts/parkTypeData.js"></script>
     <style>
-        .banner-img {
-       height: 300px;
-       object-fit: fill;
-       width: 100%;
-   }
+      .banner-img {
+        height: 300px;
+        object-fit: cover;
+        width: 100%;
+      }
+      .banner-text {
+        font-size: 1vw;
+      }
+      .carouselExample {
+        padding-top: 40px;
+      }
+      #background-color {
+    background-color: rgb(216, 228, 238);
+      }
     </style>
   </head>
-  <body>
-    <main class="container">
-        <img src="Zip files/enjoy-the-outdoors/images/homepage-banner-image.png" class="banner-img">
+  <body id="background-color">
+    <main class="container-fluid">
       <!--NAVBAR BELOW-->
-      <div>
-        <ul class="nav nav-underline justify-content-md-center">
+      <ul class="nav nav-underline justify-content-md-center">
+        <div>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="homepage.html"
-              >Home</a
-            >
+            <a href="homepage.html" class="justify-content-lg-start">
+              <img
+                src="Zip files/enjoy-the-outdoors/enjoy-the-outdoors-logo-zip-file/png/logo-black.png"
+                width="150px"
+              />
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="national_parks.html">National Parks</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="mountains.html">Mountains</a>
-          </li>
-        </ul>
-      </div>
-      <div id="carouselExample" class="carousel slide">
+        </div>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="homepage.html"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="national_parks.html">National Parks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mountains.html">Mountains</a>
+        </li>
+      </ul>
+      <img
+        src="Zip files/enjoy-the-outdoors/images/homepage-banner-image.jpg"
+        class="banner-img img-fluid"
+        alt="image of Glacier National Park"
+      />
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
               src="Zip files/enjoy-the-outdoors/images/Bond-StoryImage_3.jpg"
-              class="d-block w-100"
+              class="d-block w-50"
               alt="..."
             />
           </div>
           <div class="carousel-item">
             <img
               src="Zip files/enjoy-the-outdoors/images/Hale-StoryImg.jpg"
-              class="d-block w-100"
+              class="d-block w-50"
               alt="..."
             />
           </div>
           <div class="carousel-item">
             <img
               src="Zip files/enjoy-the-outdoors/images/Whiteface-StoryImg.jpg"
-              class="d-block w-100"
+              class="d-block w-50"
               alt="..."
             />
           </div>
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExample"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExample"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
     </main>
     <script

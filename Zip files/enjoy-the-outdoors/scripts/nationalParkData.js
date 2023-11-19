@@ -6859,8 +6859,53 @@ const nationalParksArray = [
     }
 ]
 
-document.addEventListener("DOMContentLoaded", () => {
-    const locationSearch = document.getElementById("locationSearch");
-    const typeSearch = document.getElementById("typeSearch");
-    
-})
+function populateStatesDropdown() {
+    const stateDropdown = document.getElementById("park-state");
+    const uniqueStates = [...new Set(nationalParksArray.map(park => park.State))];
+
+    uniqueStates.forEach(state => {
+        const option = document.createElement("option");
+        option.value = state;
+        option.textContent = state;
+        stateDropdown.appendChild(option);
+    });
+}
+
+// Function to filter and display parks based on user selections
+function filterParks() {
+    const selectedType = document.getElementById("park-type").value;
+    const selectedState = document.getElementById("park-state").value;
+
+    const filteredParks = nationalParksArray.filter(park => 
+        (selectedType === "" || park.LocationName.includes(selectedType)) &&
+        (selectedState === "" || park.State === selectedState)
+    );
+
+    displayParks(filteredParks);
+}
+
+// Function to display parks in the HTML
+function displayParks(parks) {
+    const parkInfoContainer = document.getElementById("park-info-container");
+    parkInfoContainer.innerHTML = ""; // Clear previous content
+
+    parks.forEach(park => {
+        const parkInfo = document.createElement("div");
+        parkInfo.innerHTML = `
+            <h3>${park.LocationName}</h3>
+            <p><strong>Location:</strong> ${park.City}, ${park.State}</p>
+            <p><strong>Address:</strong> ${park.Address}, ${park.ZipCode}</p>
+            <p><strong>Phone:</strong> ${park.Phone || "N/A"}</p>
+            <!-- Add more details as needed -->
+
+            <hr>
+        `;
+        parkInfoContainer.appendChild(parkInfo);
+    });
+}
+
+// Initialize the state dropdown
+populateStatesDropdown();
+
+// Display all parks initially
+displayParks(nationalParksArray);

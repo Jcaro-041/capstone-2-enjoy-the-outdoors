@@ -10,44 +10,48 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <style>
+    #background-color {
+      background-color: rgb(216, 228, 238);
+    }
+  </style>
+  </head>
+  <body id="background-color">
+    <main class="container">
+        <div>
+            <ul class="nav nav-underline justify-content-md-center">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="homepage.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="national_parks.html">National Parks</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="mountains.html">Mountains</a>
+              </li>
+            </ul>
+          </div>
+          <label for="park-type">Select Type:</label>
+          <select id="park-type" onchange="filterParks()">
+              <option value="">All Types</option>
+              <option value="National Historical Park">National Historical Park</option>
+              <option value="National Park">National Park</option>
+              <!-- Add other types as needed -->
+          </select>
+      
+          <label for="park-state">Select State:</label>
+          <select id="park-state" onchange="filterParks()">
+              <option value="">All States</option>
+              <!-- Add options dynamically based on the unique states in the array -->
+          </select>
+      
+          <div id="park-info-container"></div>
+    </main>
     <script src="Zip files/enjoy-the-outdoors/scripts/locationData.js"></script>
-    <script src="Zip files/enjoy-the-outdoors/scripts/mountainData.js"></script>
     <script src="Zip files/enjoy-the-outdoors/scripts/nationalParkData.js"></script>
     <script src="Zip files/enjoy-the-outdoors/scripts/parkTypeData.js"></script>
-  </head>
-  <body>
-    <main class="container">
-        <div class="navbar navbar-expand-lg bg-light sticky-top" data-bs-theme="light">
-            <ul>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="homepage.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="national_parks.html">National Parks</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="mountains.html">Mountains</a>
-            </li>
-          </ul>
-        </div>
-        <div class="form-floating mb-3">
-            <select name="" id="color-select" class="form-select">
-                <option>Filter by location</option>
-                <option>Black</option>
-
-            </select>
-            <label for="color-select">Color</label>
-            <div class="form-floating mb-3">
-                <select name="" id="color-select" class="form-select">
-                    <option>Filter by type</option>
-                    <option>Black</option>
-    
-                </select>
-                <label for="color-select">Color</label>
-        </div>
-        <input type="text" id="typeSearch">
-      </div>
-    </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
