@@ -591,6 +591,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 cardText2.classList.add("card-text");
                 cardText2.textContent = `Description: ${selectedMountain.desc}`;
 
+                // This would print out the coordinates for the mountain but i couldnt get it to work :/
+                //const cardText3 = document.createElement("p");
+                //cardText3.classList.add("card-text");
+                //cardText3.textContent = `Coordinates: Latitude: ${selectedMountain.coords.latitude}, //Longitude: ${selectedMountain.coords.longitude}`;
+
                 const cardImage = document.createElement("img");
                 cardImage.classList.add("card-img");
                 cardImage.classList.add("img-fluid");
@@ -603,6 +608,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 cardBody.appendChild(cardTitle);
                 cardBody.appendChild(cardText1);
                 cardBody.appendChild(cardText2);
+                // cardBody.appendChild(cardText3);
                 card.appendChild(cardImage);
                 card.appendChild(cardBody);
 

@@ -6885,6 +6885,7 @@ function populateStatesDropdown() {
 
     // sorts the array alphabetically
     uniqueStates.sort();
+    // finally populates the option tags with the state name as value
     uniqueStates.forEach(state => {
         const option = document.createElement("option");
         option.value = state;
