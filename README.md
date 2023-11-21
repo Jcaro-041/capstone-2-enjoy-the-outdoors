@@ -2,7 +2,7 @@
 
 # First page: homepage
 ## Goal of this page: Present to the user a home page that provides navigation links and brief descriptions of those links with a few images and a footer for contact info and social media links
-![Image of homepage](/Zip%20files/enjoy-the-outdoors/images/homepage-readme.jpg)
+![Image of homepage](/Zip%20files/enjoy-the-outdoors/images/homepage-readme.JPG)
 
 # Second page: national parks
 ## Goal of this page: Show to the user two drop down menus that they can use to filter through different national parks of America
