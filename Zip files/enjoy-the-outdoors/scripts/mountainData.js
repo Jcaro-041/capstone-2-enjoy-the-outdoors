@@ -538,15 +538,83 @@ document.addEventListener("DOMContentLoaded", () => {
     populateMountains();
 
     // Add event listener to detect when the user selects a mountain
-    selectElement.addEventListener("change", (event) => {
-        const selectedMountainName = event.target.value;
-        const selectedMountain = mountainInfo().find(mountain => mountain.name === selectedMountainName);
+    function populateMountains() {
+        const selectElement = document.getElementById("mountain-select");
+        const mountains = mountainInfo();
 
-        // Display information about the selected mountain
-        infoContainer.innerText = `<h2>${selectedMountain.name}</h2> <p>Elevation: ${selectedMountain.elevation}</p> <p>Effort: ${selectedMountain.effort}</p> <p>Description: ${selectedMountain.desc}</p> <img src="images/${selectedMountain.img}" alt="${selectedMountain.name}">`;
-    });
+        // Add default option
+        const defaultOption = document.createElement("option");
+        defaultOption.value = "Select a mountain to explore";
+        defaultOption.text = "Select a mountain to explore";
+        selectElement.appendChild(defaultOption);
+
+        mountains.forEach(mountain => {
+            const option = document.createElement("option");
+            option.value = mountain.name;
+            option.text = mountain.name;
+            selectElement.appendChild(option);
+        });
+
+        // Add event listener to detect when the user selects a mountain
+        selectElement.addEventListener("change", () => {
+            const selectedMountainName = selectElement.value;
+
+            if (selectedMountainName === "Select a mountain to explore") {
+                // Clear the mountain info
+                infoContainer.innerHTML = "";
+            } else {
+                const selectedMountain = mountainInfo().find(mountain => mountain.name === selectedMountainName);
+
+                // Makes the card classes for the elements made
+                // So many classes...
+                const card = document.createElement("div");
+                card.classList.add("card");
+                card.classList.add("mt-5");
+                card.classList.add("w-50");
+                card.classList.add("bg-transparent");
+                card.classList.add("border-0");
+                card.classList.add("mx-auto");
+
+                const cardBody = document.createElement("div");
+                cardBody.classList.add("card-body");
+                cardBody.classList.add("text-center"); // This centers all the text following the image
+
+                const cardTitle = document.createElement("h5"); //Creates title for card 
+                cardTitle.classList.add("card-title");
+                cardTitle.textContent = selectedMountain.name;
+
+                const cardText1 = document.createElement("p");
+                cardText1.classList.add("card-text");
+                cardText1.textContent = `Effort needed to climb/hike this mountain: ${selectedMountain.effort}`;
+
+                const cardText2 = document.createElement("p");
+                cardText2.classList.add("card-text");
+                cardText2.textContent = `Description: ${selectedMountain.desc}`;
+
+                const cardImage = document.createElement("img");
+                cardImage.classList.add("card-img");
+                cardImage.classList.add("img-fluid");
+                cardImage.classList.add("rounded");
+                cardImage.classList.add("w-50");
+                cardImage.classList.add("mx-auto");
+                cardImage.src = `/Zip files/enjoy-the-outdoors/images/${selectedMountain.img}`;
+                cardImage.alt = selectedMountain.name;
+
+                cardBody.appendChild(cardTitle);
+                cardBody.appendChild(cardText1);
+                cardBody.appendChild(cardText2);
+                card.appendChild(cardImage);
+                card.appendChild(cardBody);
+
+                // Clear the mountain info and append the card to the info container
+                infoContainer.innerHTML = "";
+                infoContainer.appendChild(card);
+            }
+        });
+    }
 });
 
+// function that will populate the dropdown menu with the different mountains
 function populateMountains() {
     const selectElement = document.getElementById("mountain-select");
     const mountains = mountainInfo();
